@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    name: minecraft-server
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    environment:
+      SEED: ""
+      ONLINE_MODE: false
+      SERVER_NAME: "Cemu Server"
+      ENABLE_COMMAND_BLOCK: true
+      EULA: "true"
+      TYPE: "PAPER"
+      ICON: "https://images-ext-2.discordapp.net/external/WSMh51Kg1ET5aaw_wc0ZCLL-mLKBecj5g2_PMstpiJg/%3Fsize%3D4096/https/cdn.discordapp.com/icons/1133963190359830721/299f4c1a52d593faf39920b6263db888.png"
+      DIFFICULTY: "normal"
+      PLUGINS: |
+        https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot
+        https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot
+    ports:
+      - "25565:25565"
+      - "19132:19132/udp"
+    volumes:
+      - C:\Users\cemu\Desktop\lab\minecraft-server:/data
