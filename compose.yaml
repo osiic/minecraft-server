@@ -3,6 +3,7 @@ version: "3.8"
 services:
   mc:
     image: itzg/minecraft-server
+    name: minecraft-server
     tty: true
     stdin_open: true
     restart: unless-stopped
